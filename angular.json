@@ -54,7 +54,7 @@
             ],
             "scripts": [
               "src/assets/lib/logger.js",
-              "src/assets/lib/fingerprint.js"
+              "src/assets/lib/fingerprint.js",
             ]
           },
           "configurations": {

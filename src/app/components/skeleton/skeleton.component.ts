@@ -1,5 +1,5 @@
 /* Core modules */
-import {ChangeDetectionStrategy, ChangeDetectorRef, Component, ViewChild} from '@angular/core';
+import {ChangeDetectionStrategy, ChangeDetectorRef, Component, ElementRef, ViewChild} from '@angular/core';
 /* Reactive forms modules */
 import {AbstractControl, FormArray, FormBuilder, FormControl, FormGroup, Validators} from '@angular/forms'
 import {MatFormField} from "@angular/material/form-field";
@@ -16,6 +16,8 @@ import {Instruction} from "../../models/shared/instructions";
 /* AWS Integration*/
 import * as AWS from 'aws-sdk';
 import {ManagedUpload} from "aws-sdk/clients/s3";
+import * as annotator from '../../../assets/lib/annotator.js';
+
 /* Font Awesome icons */
 import {faSpinner} from "@fortawesome/free-solid-svg-icons";
 import {faInfoCircle} from "@fortawesome/free-solid-svg-icons";
@@ -87,6 +89,7 @@ export class SkeletonComponent {
   /* References to task stepper and token forms */
   @ViewChild('stepper') stepper: MatStepper;
   @ViewChild('urlField') urlField: MatFormField;
+  @ViewChild('statement') statementField;
   tokenForm: FormGroup;
   tokenInput: FormControl;
   tokenOutput: string;
@@ -217,6 +220,14 @@ export class SkeletonComponent {
     client: HttpClient,
     formBuilder: FormBuilder,
   ) {
+
+    //var anno = new annotator.App()
+    //anno.include(annotator.ui.main, {
+    //  editorExtensions: [annotator.ui.tags.editorExtension],
+    //  viewerExtensions: [annotator.ui.tags.viewerExtension]
+    //})
+
+    //anno.start()
 
     /* |--------- SERVICES - INITIALIZATION ---------| */
 
