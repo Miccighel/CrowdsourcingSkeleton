@@ -1,11 +1,8 @@
 [
   {
     "name": "truthfulness",
-    "url": true,
-    "justification": {
-      "text": "Your justification here",
-      "min_words":5
-    },
+    "url": false,
+    "justification": false,
     "scale": {
       "type": "categorical",
       "mapping": [
