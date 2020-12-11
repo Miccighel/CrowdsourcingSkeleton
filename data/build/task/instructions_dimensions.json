@@ -2,8 +2,7 @@
   {
     "caption": "Please, do the following step:",
     "steps": [
-      "Highlight the text",
-      "Annotate it"
+      "Input as truthfulness value one of the six labels."
     ]
   }
 ]

@@ -1,5 +1,40 @@
 [
-
+  {
+    "type": "standard",
+    "questions": [
+      {
+        "name": "age",
+        "text": "What is your age range?",
+        "answers": [
+          "0-18",
+          "19-25",
+          "26-35",
+          "36-50",
+          "50-80",
+          "80"
+        ]
+      },
+      {
+        "name": "environment",
+        "text": "Should the government increase environmental regulations to prevent climate change?",
+        "answers": [
+          "Agree",
+          "Disagree",
+          "No opinion either way"
+        ]
+      }
+    ]
+  },
+  {
+    "type": "crt",
+    "questions": [
+      {
+        "name": "farmers",
+        "text": "If three farmers can plant three trees in three hours, how long would it take nine farmers to plant nine trees?",
+        "answers": []
+      }
+    ]
+  }
 ]
 
 

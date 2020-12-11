@@ -2,7 +2,16 @@
   {
     "caption": "Instructions",
     "steps": [
-      "In this task you will be asked to assess tweets."
+      "We will show you 3 statements made by popular people (for example, political figures) together with the information of who made the statement and in which date. For each statement, we ask you to tell us its 'truth level', that is, how much the statement represents the reality; how reliable it is. The truth level must be selected among 6 different labels. For example, if the statement totally represents reality you should select 'True', while if it is false you should select 'Lie'.",
+      "Note that there are some checks throughout the task, and if you do not perform these correctly you will not be able to terminate and get paid. The data from this task is being gathered for research purposes. No personally-identifying information is recorded. Participation is entirely voluntary, and you are free to discontinue at any point."
+    ]
+  },
+  {
+    "caption": "Task Description",
+    "steps": [
+      "First, you will be asked to fill in four questionnaires that will help us collect more reliable data...",
+      "You will then be asked to rate 8 statements, each of them expressed by a person in a given context. You will be  shown the 3 statements, one at a time. Each statement is not altered in any way and it is reported as in the original source. For each statement, your task is to judge the truthfulness and validity of the statement using the radio buttons. If you wish to change a previously given judgment, you  can use the back button to revisit it.",
+      "The statements are not presented in any particular order. You might see many good statements, many bad ones, or any combination. Try not to anticipate, and simply rate each statement after reading it. Don't try to guess or randomly click, as there are some cross-checks, as indicated above. Note that you’ll need to answer all questions and fill in every field, otherwise you will not be able to proceed to the following steps."
     ]
   }
 ]

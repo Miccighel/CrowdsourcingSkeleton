@@ -258,7 +258,7 @@ export class GeneratorComponent implements OnInit {
       allowed_tries: [''],
       time_check_amount: [''],
       hits: [''],
-      setAnnotator: [''],
+      setAnnotator: [{value: '', disabled:true}],
       annotator: this._formBuilder.group({
         type: [''],
         values: this._formBuilder.array([]),
@@ -997,7 +997,7 @@ export class GeneratorComponent implements OnInit {
       taskSettingsJSON["hits"] = "..."
     }
 
-    if (taskSettingsJSON.setAnnotator == false) {
+    if (taskSettingsJSON.setAnnotator == false || taskSettingsJSON.setAnnotator == null) {
       taskSettingsJSON.annotator = false
     }
     delete taskSettingsJSON.setAnnotator

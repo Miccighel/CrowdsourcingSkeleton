@@ -17,7 +17,7 @@ import {NgxUiLoaderService} from 'ngx-ui-loader';
 import {ConfigService} from "../../services/config.service";
 import {S3Service} from "../../services/s3.service";
 /* Task models */
-import {Document} from "../../models/skeleton/document";
+import {Document} from "../../../../data/build/document";
 import {Hit} from "../../models/skeleton/hit";
 import {Questionnaire} from "../../models/skeleton/questionnaire";
 import {Dimension, ScaleInterval} from "../../models/skeleton/dimension";
@@ -252,7 +252,7 @@ export class SkeletonComponent implements OnInit {
     /* |--- TASK GENERATOR ---| */
     this.generator = false;
 
-    this.tokenInput = new FormControl('TQONDNHBUP', [Validators.required, Validators.maxLength(11)], this.validateTokenInput.bind(this));
+    this.tokenInput = new FormControl('MBYTZQGSXYP', [Validators.required, Validators.maxLength(11)], this.validateTokenInput.bind(this));
     this.tokenForm = formBuilder.group({
       "tokenInput": this.tokenInput
     });
@@ -678,27 +678,29 @@ export class SkeletonComponent implements OnInit {
         cleanedWords.push(trimmedWord)
       }
     }
-    /* If at least the first document has been reached */
-    if (this.stepper.selectedIndex >= this.questionnaireAmount) {
-      /* The current document index is selected */
-      let currentDocument = this.stepper.selectedIndex - this.questionnaireAmount;
-      /* If the user has selected some search engine responses for the current document */
-      if (this.searchEngineSelectedResponses[currentDocument]) {
-        if (this.searchEngineSelectedResponses[currentDocument]['amount'] > 0) {
-          let selectedUrl = Object.values(this.searchEngineSelectedResponses[currentDocument]["data"]).pop()
-          let response = selectedUrl["response"]
-          /* The controls are performed */
-          for (let word of cleanedWords) {
-            if (word == response["url"]) return {"invalid": "You cannot use the selected search engine url as part of the justification."}
+    if(this.stepper) {
+      /* If at least the first document has been reached */
+      if (this.stepper.selectedIndex >= this.questionnaireAmount) {
+        /* The current document index is selected */
+        let currentDocument = this.stepper.selectedIndex - this.questionnaireAmount;
+        /* If the user has selected some search engine responses for the current document */
+        if (this.searchEngineSelectedResponses[currentDocument]) {
+          if (this.searchEngineSelectedResponses[currentDocument]['amount'] > 0) {
+            let selectedUrl = Object.values(this.searchEngineSelectedResponses[currentDocument]["data"]).pop()
+            let response = selectedUrl["response"]
+            /* The controls are performed */
+            for (let word of cleanedWords) {
+              if (word == response["url"]) return {"invalid": "You cannot use the selected search engine url as part of the justification."}
+            }
           }
         }
+        const allControls = this.getControlGroup(control).controls;
+        let currentControl = Object.keys(allControls).find(name => control === allControls[name])
+        let currentDimensionName = currentControl.split("_")[0]
+        for (let dimension of this.dimensions) if (dimension.name == currentDimensionName) if (dimension.justification.minWords) minWords = dimension.justification.minWords
       }
-      const allControls = this.getControlGroup(control).controls;
-      let currentControl = Object.keys(allControls).find(name => control === allControls[name])
-      let currentDimensionName = currentControl.split("_")[0]
-      for (let dimension of this.dimensions) if (dimension.name == currentDimensionName) if (dimension.justification.minWords) minWords = dimension.justification.minWords
+      return cleanedWords.length > minWords ? null : {"longer": "This is not valid."};
     }
-    return cleanedWords.length > minWords ? null : {"longer": "This is not valid."};
   }
 
   // |--------- SEARCH ENGINE INTEGRATION - FUNCTIONS ---------|

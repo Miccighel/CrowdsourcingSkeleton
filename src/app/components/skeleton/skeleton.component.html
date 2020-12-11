@@ -165,9 +165,7 @@
             </mat-radio-group>
           </mat-card-content>
           <mat-card-actions>
-            <button mat-flat-button color="primary" matStepperNext
-                    [disabled]="(!questionnairesForm[i].valid || taskCompleted)"
-                    (click)="performLogging('Next')">
+            <button mat-flat-button color="primary" matStepperNext [disabled]="(!questionnairesForm[i].valid || taskCompleted)" (click)="performLogging('Next')">
               Next
             </button>
             <span class="form-note">(*) you have to fill each field to proceed</span>
@@ -184,7 +182,7 @@
         <mat-card>
           <ng-template matStepLabel> S{{i + 1}}</ng-template>
           <mat-divider [inset]="true"></mat-divider>
-          <mat-card-title>Please study the following Tweet</mat-card-title>
+          <mat-card-title>Please judge the following statement</mat-card-title>
           <mat-divider [inset]="true"></mat-divider>
           <mat-card-content class="pt-16px">
 
@@ -192,21 +190,16 @@
             <div class="instructions sticky" *ngIf="this.settings.countdownTime">
               <h2 class="m-0">
                 Time left:
-                <countdown #cd [config]="{ demand: true, leftTime: 30, format: 's' }" (event)="handleCountdown($event, i)"></countdown>
+                <countdown #cd [config]="{ demand: true, leftTime: this.settings.countdownTime, format: 's' }" (event)="handleCountdown($event, i)"></countdown>
                 seconds
               </h2>
             </div>
 
-            <!-- Statement markup -->
             <div class="statement">
               <ul>
-                <li><strong>Text</strong> (content of the tweet):
-                  <span #statementText
-                        id="statement-{{i}}"
-                        (mouseup)="performHighlighting(this.changeDetector, $event, i, this.annotationDialog, this.notes, this.annotator)"
-                        (touchend)="performHighlighting(this.changeDetector, $event, i, this.annotationDialog, this.notes, this.annotator)"
-                        class="statement-text"
-                  >{{document.text}}</span></li>
+                <li><strong>Claimant/Source</strong> (who made the statement): {{document.claimant}}</li>
+                <li><strong>Date</strong> (when the statement was made): {{document.date}}</li>
+                <li><strong>Text</strong> (content of the statement): {{document.statement}}</li>
               </ul>
             </div>
 
@@ -244,6 +237,7 @@
                 </ol>
               </div>
             </div>
+
             <!-- Dimensions markup (list style) -->
             <ng-template #dimensionList let-dimensions="dimensions" let-i="i">
               <div *ngFor="let dimension of dimensions; let j=index" class="dimension">
