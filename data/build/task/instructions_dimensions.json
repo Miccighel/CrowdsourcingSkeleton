@@ -1,8 +1,8 @@
 [
-  {
-    "caption": "Please, do the following step:",
-    "steps": [
-      "Input as truthfulness value one of the six labels."
-    ]
-  }
+	{
+		"caption": "Please, do the following step:",
+		"steps": [
+			"Input as truthfulness value one of the six labels"
+		]
+	}
 ]

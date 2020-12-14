@@ -1,30 +1,30 @@
 [
-  {
-    "unit_id": "unit_0",
-    "token_input": "MBYTZQGSXYP",
-    "token_output": "OMKXANDMJSC",
-    "documents": [
-      {
-        "name": "pants-on-fire_doc4",
-        "statement": "COVID literally stands for Chinese Originated Viral Infectious Disease.",
-        "claimant": "Facebook Post",
-        "date": "2020-25-03",
-        "originated-from": "Viral Image"
-      },
-      {
-        "name": "LOW",
-        "statement": "Injecting Bleach Could Be a Cure for COVID-19.",
-        "claimant": "Donald Trump",
-        "date": "2020-04-23",
-        "originated-from": "Press Conference"
-      },
-      {
-        "name": "HIGH",
-        "statement": "Yes, We can!",
-        "claimant": "Barack Obama",
-        "date": "2008-01-08",
-        "originated-from": "Facebook Post"
-      }
-    ]
-  }
+	{
+		"unit_id": "unit_0",
+		"token_input": "MBYTZQGSXYP",
+		"token_output": "OMKXANDMJSC",
+		"documents": [
+			{
+				"name": "pants-on-fire_doc4",
+				"statement": "COVID literally stands for Chinese Originated Viral Infectious Disease.",
+				"claimant": "Facebook Post",
+				"date": "2020-25-03",
+				"originated-from": "Viral Image"
+			},
+			{
+				"name": "LOW",
+				"statement": "Injecting Bleach Could Be a Cure for COVID-19.",
+				"claimant": "Donald Trump",
+				"date": "2020-04-23",
+				"originated-from": "Press Conference"
+			},
+			{
+				"name": "HIGH",
+				"statement": "Yes, We can!",
+				"claimant": "Barack Obama",
+				"date": "2008-01-08",
+				"originated-from": "Facebook Post"
+			}
+		]
+	}
 ]
