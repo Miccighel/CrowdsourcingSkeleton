@@ -3,7 +3,6 @@
 	"batch_name": "Batch-1",
 	"allowed_tries": 10,
 	"time_check_amount": 5,
-	"hits": "[\r\n  {\r\n    \"unit_id\": \"unit_0\",\r\n    \"token_input\": \"MBYTZQGSXYP\",\r\n    \"token_output\": \"OMKXANDMJSC\",\r\n    \"documents\": [\r\n      {\r\n        \"name\": \"pants-on-fire_doc4\",\r\n        \"statement\": \"COVID literally stands for Chinese Originated Viral Infectious Disease.\",\r\n        \"claimant\": \"Facebook Post\",\r\n        \"date\": \"2020-25-03\",\r\n        \"originated-from\": \"Viral Image\"\r\n      },\r\n      {\r\n        \"name\": \"LOW\",\r\n        \"statement\": \"Injecting Bleach Could Be a Cure for COVID-19.\",\r\n        \"claimant\": \"Donald Trump\",\r\n        \"date\": \"2020-04-23\",\r\n        \"originated-from\": \"Press Conference\"\r\n      },\r\n      {\r\n        \"name\": \"HIGH\",\r\n        \"statement\": \"Yes, We can!\",\r\n        \"claimant\": \"Barack Obama\",\r\n        \"date\": \"2008-01-08\",\r\n        \"originated-from\": \"Facebook Post\"\r\n      }\r\n    ]\r\n  }\r\n]\r\n",
 	"annotator": false,
 	"countdown_time": false,
 	"blacklist_batches": [],
