@@ -1070,7 +1070,9 @@ export class GeneratorComponent implements OnInit {
     let taskInstructionsPromise = this.S3Service.uploadTaskInstructionsConfig(this.configService.environment, this.generalInstructionsJSON(), this.taskSettingsForm.get('task_name').value, this.taskSettingsForm.get('batch_name').value)
     let dimensionsInstructionsPromise = this.S3Service.uploadDimensionsInstructionsConfig(this.configService.environment, this.evaluationInstructionsJSON(), this.taskSettingsForm.get('task_name').value, this.taskSettingsForm.get('batch_name').value)
     let searchEngineSettingsPromise = this.S3Service.uploadSearchEngineSettings(this.configService.environment, this.searchEngineJSON(), this.taskSettingsForm.get('task_name').value, this.taskSettingsForm.get('batch_name').value)
-    let taskSettingsPromise = this.S3Service.uploadTaskSettings(this.configService.environment, this.taskSettingsJSON(), this.taskSettingsForm.get('task_name').value, this.taskSettingsForm.get('batch_name').value)
+    let taskSettings = this.taskSettingsJSON()
+    delete taskSettings["hits"]
+    let taskSettingsPromise = this.S3Service.uploadTaskSettings(this.configService.environment, taskSettings, this.taskSettingsForm.get('task_name').value, this.taskSettingsForm.get('batch_name').value)
     let workerChecksPromise = this.S3Service.uploadWorkersCheck(this.configService.environment, this.workerChecksJSON(), this.taskSettingsForm.get('task_name').value, this.taskSettingsForm.get('batch_name').value)
     questionnairePromise.then(result => {
       if (!result["failed"]) {
