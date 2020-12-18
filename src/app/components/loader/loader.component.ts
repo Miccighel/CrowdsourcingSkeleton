@@ -93,8 +93,8 @@ export class LoaderComponent {
 
     if(this.adminAccess) this.ngxService.startLoader("loader")
 
-    this.username = new FormControl('admin', [Validators.required]);
-    this.password = new FormControl('DBegSUGED5', [Validators.required]);
+    this.username = new FormControl('', [Validators.required]);
+    this.password = new FormControl('', [Validators.required]);
     this.loginForm = formBuilder.group({
       "username": this.username,
       "password": this.password
