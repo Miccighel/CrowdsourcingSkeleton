@@ -184,7 +184,7 @@
         <mat-card>
           <ng-template matStepLabel> S{{i + 1}}</ng-template>
           <mat-divider [inset]="true"></mat-divider>
-          <mat-card-title>Please study the following Tweet</mat-card-title>
+          <mat-card-title>Please assess the following image</mat-card-title>
           <mat-divider [inset]="true"></mat-divider>
           <mat-card-content class="pt-16px">
 
@@ -200,14 +200,17 @@
             <!-- Statement markup -->
             <div class="statement">
               <ul>
-                <li><strong>Text</strong> (content of the tweet):
+                <li><strong>Image Name</strong>:
                   <span #statementText
                         id="statement-{{i}}"
                         (mouseup)="performHighlighting(this.changeDetector, $event, i, this.annotationDialog, this.notes, this.annotator)"
                         (touchend)="performHighlighting(this.changeDetector, $event, i, this.annotationDialog, this.notes, this.annotator)"
                         class="statement-text"
-                  >{{document.text}}</span></li>
+                  >{{document.image_name}}</span></li>
               </ul>
+              <div class="image-box">
+                <img src="{{document.url}}">
+              </div>
             </div>
 
             <div *ngIf="checkUndeletedNotesPresence(this.notes[i])" class="annotations">

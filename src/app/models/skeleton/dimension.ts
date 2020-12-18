@@ -20,6 +20,8 @@ export class Dimension {
     index: number,
     data: JSON
   ) {
+    console.log(data)
+    console.log(data['style'])
     /* DO NOT REMOVE THIS LINE */
     this.index = index;
 
